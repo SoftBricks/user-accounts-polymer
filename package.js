@@ -12,7 +12,15 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.0.3.1');
-  api.addFiles('softbricks:user-management-polymer.js');
+
+  api.use(['templating'], 'client');
+  api.use('softbricks:user-management', ['client', 'server']);
+  api.imply('softbricks:user-management@0.0.1', ['client', 'server']);
+
+  api.addFiles(['lib/templates/userList.html', 'lib/templates/userList.js'], 'client');
+  api.addFiles('lib/templates/userDetailView.html');
+  api.addFiles('lib/templates/editUser.html');
+  api.addFiles('lib/templates/addUser.html');
 });
 
 Package.onTest(function(api) {
