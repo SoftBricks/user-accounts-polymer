@@ -17,9 +17,15 @@
 	padding-left: 32px;
 	padding-right: 16px;
 }
+.um .item.toggle-item .text {
+	padding-left: 20px;
+}
 
 .um core-icon {
 	margin-left: 16px;
+}
+.um .item paper-toggle-button {
+	margin-left: 18px;
 }
 
 .um .um-content {

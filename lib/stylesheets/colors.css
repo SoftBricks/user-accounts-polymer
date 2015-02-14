@@ -5,3 +5,11 @@
 	color: white;
 	background: #00BBD2;
 }
+
+paper-checkbox::shadow #checkbox.checked {
+  background-color: #00BBD2;
+  border-color: #00BBD2;
+}
+paper-toggle-button::shadow [checked] .toggle {
+  background-color: #00BBD2;
+}

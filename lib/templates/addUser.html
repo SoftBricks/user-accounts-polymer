@@ -1,31 +1,56 @@
 <template name="umAddUser">
 	<div class="um create-user-view">
-		<core-toolbar class="um-background-color-primary">
-		  <paper-icon-button icon="arrow-back"></paper-icon-button>
-		  <div flex>Create User</div>
-		  <paper-icon-button icon="check"></paper-icon-button>
-		</core-toolbar>
 		
 		<div horizontal center-justified layout>
 			<div class="um-content" flex>
 				<!-- <div class="subheader um-color-primary" horizontal layout center>Full Name</div> -->
-				<core-item class="item">
-					<core-icon icon="social:person"></core-icon>
-					<div class="text" flex><paper-input label="Full Name" flex></paper-input></div>
-				</core-item>
-				
-				<!-- <div class="subheader um-color-primary" horizontal layout center>Username</div> -->
-				<core-item class="item">
-					<core-icon icon="account-circle"></core-icon>
-					<div class="text" flex><paper-input label="Username"></paper-input></div>
-				</core-item>
-				
-				<!-- <div class="subheader um-color-primary" horizontal layout center>Email</div> -->
-				<core-item class="item">
-					<core-icon icon="mail"></core-icon>
-					<div class="text" flex><paper-input label="Email"></paper-input></div>
-				</core-item>
+				{{#autoForm schema=userschema id="createUserForm" type="method" meteormethod="createUserWithoutPassword"}}
+					<core-item class="item">
+						<core-icon icon="social:person"></core-icon>
+						<div class="text" flex>
+							<paper-input-decorator label="Full Name" error="{{fullnameError}}">
+								<!-- <input is="core-input" id="fullname" type="text" required> -->
+								{{> afFieldInput name='fullname' type='text' is='core-input' required='true'}}
+							</paper-input-decorator>
+						</div>
+					</core-item>
+					
+					<!-- <div class="subheader um-color-primary" horizontal layout center>Username</div> -->
+					<core-item class="item">
+						<core-icon icon="account-circle"></core-icon>
+						<div class="text" flex>
+							<paper-input-decorator label="Username" error="{{usernameError}}">
+								<!-- <input is="core-input" id="username" type="text" required> -->
+								{{> afFieldInput name='username' type='text' is='core-input' required='true'}}
+							</paper-input-decorator>
+						</div>
+					</core-item>
+					
+					<!-- <div class="subheader um-color-primary" horizontal layout center>Email</div> -->
+					<core-item class="item">
+						<core-icon icon="mail"></core-icon>
+						<div class="text" flex>
+							<paper-input-decorator label="Email" error="{{emailError}}">
+								<!-- <input is="core-input" id="email" type="email" required> -->
+								{{> afFieldInput name='email' type='email' is='core-input' required='true'}}
+							</paper-input-decorator>
+						</div>
+					</core-item>
+					<core-item class="item toggle-item">
+						<paper-toggle-button id="adminToggle"></paper-toggle-button>
+						<div class="text" flex>
+							Admin
+						</div>
+					</core-item>
 
+					<div horizontal end-justified layout>
+						<div hidden>
+							{{> afFieldInput name='admin' type='boolean-checkbox'}}
+						</div>
+						<button type="submit" id="at-btn" hidden></button>
+						<paper-button id="createUser">Create</paper-button>
+					</div>
+				{{/autoForm}}
 			</div>
 		</div>
 	</div>

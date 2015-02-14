@@ -26,7 +26,7 @@ Package.onUse(function(api) {
   api.addFiles(['lib/templates/showUsers.html', 'lib/templates/showUsers.js'], 'client');
   api.addFiles(['lib/templates/showUser.html', 'lib/templates/showUser.js', 'lib/stylesheets/showUser.css'],  'client');
   api.addFiles(['lib/templates/editUser.html', 'lib/templates/editUser.js', 'lib/stylesheets/editUser.css'], 'client');
-  api.addFiles('lib/templates/addUser.html');
+  api.addFiles(['lib/templates/addUser.html', 'lib/templates/addUser.js'], 'client');
 
   api.export('UserManagementPolymer', ['client', 'server']);
 });
