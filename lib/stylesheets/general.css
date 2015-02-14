@@ -1,0 +1,27 @@
+.um paper-input {
+	width: 100%;
+}
+.um .subheader {
+	height: 38px;
+	padding: 0 16px;
+	font-size: 14px;
+	border-top: 1px solid #f0f0f0;
+}
+.um .heading {
+	padding-left: 72px;
+	color: #B6B6B6;
+	font-size: 14px;
+}
+
+.um .text{
+	padding-left: 32px;
+	padding-right: 16px;
+}
+
+.um core-icon {
+	margin-left: 16px;
+}
+
+.um .um-content {
+	max-width: 500px;
+}

@@ -1,0 +1,29 @@
+<template name="umShowUser">
+	<div class="um user-detail-view">
+	{{#with user}}
+		<core-toolbar class="um-background-color-primary">
+		  <paper-icon-button class="goToUsers" icon="arrow-back"></paper-icon-button>
+		  <div flex>{{firstname}} {{name}}</div>
+		  <paper-icon-button class="editUser" icon="create"></paper-icon-button>
+		  <paper-icon-button icon="delete"></paper-icon-button>
+		</core-toolbar>
+		
+		<div class="subheader um-color-primary" horizontal layout center>Username</div>
+		<core-item class="item">
+			<core-icon icon="account-circle"></core-icon>
+			<div class="text">{{username}}</div>
+			<div class="secondary-text"></div>
+		</core-item>
+		
+		<div class="subheader um-color-primary" horizontal layout center>Emails</div>
+		{{#each emails}}
+			<core-item class="item">
+				<core-icon icon="mail"></core-icon>
+				<div class="text">{{address}}</div>
+				<div class="secondary-text"></div>
+			</core-item>
+		{{/each}}
+		<!-- </div> -->
+	{{/with}}
+	</div>
+</template>

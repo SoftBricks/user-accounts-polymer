@@ -14,13 +14,21 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0.3.1');
 
   api.use(['templating'], 'client');
+  api.use(['underscore'], ['client', 'server']);
   api.use('softbricks:user-management', ['client', 'server']);
   api.imply('softbricks:user-management@0.0.1', ['client', 'server']);
 
-  api.addFiles(['lib/templates/userList.html', 'lib/templates/userList.js'], 'client');
-  api.addFiles('lib/templates/userDetailView.html');
-  api.addFiles('lib/templates/editUser.html');
+
+
+  api.addFiles('lib/stylesheets/colors.css', 'client');
+  api.addFiles('lib/stylesheets/general.css', 'client');
+  api.addFiles('lib/coreExtension.js', ['client', 'server']);
+  api.addFiles(['lib/templates/showUsers.html', 'lib/templates/showUsers.js'], 'client');
+  api.addFiles(['lib/templates/showUser.html', 'lib/templates/showUser.js', 'lib/stylesheets/showUser.css'],  'client');
+  api.addFiles(['lib/templates/editUser.html', 'lib/templates/editUser.js', 'lib/stylesheets/editUser.css'], 'client');
   api.addFiles('lib/templates/addUser.html');
+
+  api.export('UserManagementPolymer', ['client', 'server']);
 });
 
 Package.onTest(function(api) {

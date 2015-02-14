@@ -1,2 +1,32 @@
-<template name="editUser">
+<template name="umEditUser">
+	<div class="um edit-user-view">
+	{{#with user}}
+		<core-toolbar class="um-background-color-primary">
+		  <paper-icon-button class="goToUserDetail" icon="arrow-back"></paper-icon-button>
+		  <div flex></div>
+		  <paper-icon-button icon="check"></paper-icon-button>
+		</core-toolbar>
+
+		<div class="subheader um-color-primary" horizontal layout center>Full Name</div>
+		<core-item class="item">
+			<core-icon icon="social:person"></core-icon>
+			<div class="text" flex><paper-input label="{{name}}"></paper-input></div>
+		</core-item>
+		
+		<div class="subheader um-color-primary" horizontal layout center>Username</div>
+		<core-item class="item">
+			<core-icon icon="account-circle"></core-icon>
+			<div class="text" flex><paper-input label="{{username}}"></paper-input></div>
+		</core-item>
+		
+		<div class="subheader um-color-primary" horizontal layout center>Email</div>
+		{{#each emails}}
+			<core-item class="item">
+				<core-icon icon="mail"></core-icon>
+				<div class="text" flex><paper-input label="{{address}}"></paper-input></div>
+			</core-item>
+		{{/each}}
+		<!-- </div> -->
+	{{/with}}
+	</div>
 </template>

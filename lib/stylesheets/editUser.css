@@ -1,0 +1,13 @@
+.edit-user-view .item {
+	height: 61px;
+}
+
+.edit-user-view paper-input::shadow paper-input-decorator {
+	padding: 0;
+	padding-bottom: 8px;
+}
+.edit-user-view paper-input::shadow input {
+	padding-top: 16px;
+	padding-bottom: 8px;
+	margin: 0;
+}
