@@ -3,35 +3,29 @@
 		
 		<div horizontal center-justified layout>
 			<div class="um-content" flex>
-				<!-- <div class="subheader um-color-primary" horizontal layout center>Full Name</div> -->
 				{{#autoForm schema=userschema id="createUserForm" type="method" meteormethod="createUserWithoutPassword"}}
 					<core-item class="item">
 						<core-icon icon="social:person"></core-icon>
 						<div class="text" flex>
 							<paper-input-decorator label="Full Name" error="{{fullnameError}}">
-								<!-- <input is="core-input" id="fullname" type="text" required> -->
-								{{> afFieldInput name='fullname' type='text' is='core-input' required='true'}}
+								{{> afFieldInput name='profile.$.fullname' type='text' is='core-input' required='true'}}
 							</paper-input-decorator>
 						</div>
 					</core-item>
 					
-					<!-- <div class="subheader um-color-primary" horizontal layout center>Username</div> -->
 					<core-item class="item">
 						<core-icon icon="account-circle"></core-icon>
 						<div class="text" flex>
-							<paper-input-decorator label="Username" error="{{usernameError}}">
-								<!-- <input is="core-input" id="username" type="text" required> -->
-								{{> afFieldInput name='username' type='text' is='core-input' required='true'}}
+							<paper-input-decorator id="usernameDecorator" label="Username" error="{{usernameError.empty}}">
+								{{> afFieldInput id='username' name='username' type='text' is='core-input' required='true' autocomplete='off'}}
 							</paper-input-decorator>
 						</div>
 					</core-item>
 					
-					<!-- <div class="subheader um-color-primary" horizontal layout center>Email</div> -->
 					<core-item class="item">
 						<core-icon icon="mail"></core-icon>
 						<div class="text" flex>
 							<paper-input-decorator label="Email" error="{{emailError}}">
-								<!-- <input is="core-input" id="email" type="email" required> -->
 								{{> afFieldInput name='email' type='email' is='core-input' required='true'}}
 							</paper-input-decorator>
 						</div>
