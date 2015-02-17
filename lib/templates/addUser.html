@@ -8,7 +8,7 @@
 						<core-icon icon="social:person"></core-icon>
 						<div class="text" flex>
 							<paper-input-decorator label="Full Name" error="{{fullnameError}}">
-								{{> afFieldInput name='profile.$.fullname' type='text' is='core-input' required='true'}}
+								{{> afFieldInput name='profile.fullname' type='text' is='core-input' required='true'}}
 							</paper-input-decorator>
 						</div>
 					</core-item>
@@ -25,8 +25,8 @@
 					<core-item class="item">
 						<core-icon icon="mail"></core-icon>
 						<div class="text" flex>
-							<paper-input-decorator label="Email" error="{{emailError}}">
-								{{> afFieldInput name='email' type='email' is='core-input' required='true'}}
+							<paper-input-decorator id="emailDecorator" label="Email" error="{{emailError.empty}}">
+								{{> afFieldInput id="email" name='emails.0.address' type='email' is='core-input' required='true' autocomplete='off'}}
 							</paper-input-decorator>
 						</div>
 					</core-item>
