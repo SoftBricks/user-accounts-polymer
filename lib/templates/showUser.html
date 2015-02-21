@@ -3,13 +3,13 @@
 	{{#with user}}
 		<div class="subheader um-color-primary" horizontal layout center>Full name</div>
 		<core-item class="item">
-			<core-icon icon="social:person"></core-icon>
-			<div class="text">{{name}}</div>
+			<core-icon class="left-icon" icon="social:person"></core-icon>
+			<div class="text">{{profile.fullname}}</div>
 			<div class="secondary-text"></div>
 		</core-item>
 		<div class="subheader um-color-primary" horizontal layout center>Username</div>
 		<core-item class="item">
-			<core-icon icon="account-circle"></core-icon>
+			<core-icon class="left-icon" icon="account-circle"></core-icon>
 			<div class="text">{{username}}</div>
 			<div class="secondary-text"></div>
 		</core-item>
@@ -17,10 +17,30 @@
 		<div class="subheader um-color-primary" horizontal layout center>Emails</div>
 		{{#each emails}}
 			<core-item class="item">
-				<core-icon icon="mail"></core-icon>
+				<core-icon class="left-icon" icon="mail"></core-icon>
 				<div class="text">{{address}}</div>
 				<div class="secondary-text"></div>
 			</core-item>
+		{{/each}}
+
+		<div class="subheader um-color-primary" horizontal layout center>Account Status</div>
+		<core-item class="item">
+			{{#if profile.activated}}
+			<core-icon class="left-icon" icon="check"></core-icon>
+			{{else}}
+			<core-icon class="left-icon" icon="clear"></core-icon>
+			{{/if}}
+			<div class="text">Aktiv</div>
+			<div class="secondary-text"></div>
+		</core-item>
+
+		{{#each profile.fields}}
+		<div class="subheader um-color-primary" horizontal layout center>{{key}}</div>
+		<core-item class="item">
+			<!-- <core-icon class="left-icon" icon="check"></core-icon> -->
+			<div class="left-icon">{{value}}</div>
+			<div class="secondary-text"></div>
+		</core-item>
 		{{/each}}
 		<!-- </div> -->
 	{{/with}}

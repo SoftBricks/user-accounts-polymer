@@ -3,33 +3,14 @@
 		
 		<div horizontal center-justified layout>
 			<div class="um-content" flex>
-				{{#autoForm schema=userschema id="createUserForm" type="method" meteormethod="createUserWithoutPassword"}}
-					<core-item class="item">
-						<core-icon icon="social:person"></core-icon>
-						<div class="text" flex>
-							<paper-input-decorator label="Full Name" error="{{fullnameError}}">
-								{{> afFieldInput name='profile.$.fullname' type='text' is='core-input' required='true'}}
-							</paper-input-decorator>
-						</div>
-					</core-item>
+				{{#autoForm schema=userschema id="createUserForm" type="method" meteormethod="createUserWithoutPassword" validation="keyup"}}
+
+					{{> afQuickField name='profile.fullname' icon='social:person'}}
+
+					{{> afQuickField name='username' autocomplete='off' icon='account-circle'}}
 					
-					<core-item class="item">
-						<core-icon icon="account-circle"></core-icon>
-						<div class="text" flex>
-							<paper-input-decorator id="usernameDecorator" label="Username" error="{{usernameError.empty}}">
-								{{> afFieldInput id='username' name='username' type='text' is='core-input' required='true' autocomplete='off'}}
-							</paper-input-decorator>
-						</div>
-					</core-item>
-					
-					<core-item class="item">
-						<core-icon icon="mail"></core-icon>
-						<div class="text" flex>
-							<paper-input-decorator label="Email" error="{{emailError}}">
-								{{> afFieldInput name='email' type='email' is='core-input' required='true'}}
-							</paper-input-decorator>
-						</div>
-					</core-item>
+					{{> afQuickField name='emails.0.address' icon='mail'}}
+
 					<core-item class="item toggle-item">
 						<paper-toggle-button id="adminToggle"></paper-toggle-button>
 						<div class="text" flex>
@@ -39,7 +20,7 @@
 
 					<div horizontal end-justified layout>
 						<div hidden>
-							{{> afFieldInput name='admin' type='boolean-checkbox'}}
+							{{> afFieldInput name='profile.admin' type='boolean-checkbox'}}
 						</div>
 						<button type="submit" id="at-btn" hidden></button>
 						<paper-button id="createUser">Create</paper-button>
@@ -48,4 +29,5 @@
 			</div>
 		</div>
 	</div>
+  	<paper-toast global-toast></paper-toast>
 </template>

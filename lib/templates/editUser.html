@@ -1,27 +1,35 @@
 <template name="umEditUser">
 	<div class="um edit-user-view">
 	{{#with user}}
+	<!-- TODO change createUserForm to editUserForm -->
+        {{#autoForm schema=userschema doc=this id="createUserForm" type="method" meteormethod="updateUserInformation" validation="keyup"}}
 
-		<div class="subheader um-color-primary" horizontal layout center>Full Name</div>
-		<core-item class="item">
-			<core-icon icon="social:person"></core-icon>
-			<div class="text" flex><paper-input label="{{name}}"></paper-input></div>
+
+		{{> afQuickField name="profile.fullname" autocomplete="off" icon="social:person"}}
+        {{> afQuickField name="emails.0.address" autocomplete="off" icon="mail"}}
+        {{> afQuickField name="username" autocomplete="off" icon="account-circle"}}
+        
+        {{> afQuickField name="profile.activated"}}
+        {{> afQuickField name="profile.fields"}}
+
+		<core-item class="item toggle-item">
+			<paper-toggle-button id="adminToggle"></paper-toggle-button>
+			<div class="text" flex>
+				Admin
+			</div>
 		</core-item>
 		
-		<div class="subheader um-color-primary" horizontal layout center>Username</div>
-		<core-item class="item">
-			<core-icon icon="account-circle"></core-icon>
-			<div class="text" flex><paper-input label="{{username}}"></paper-input></div>
-		</core-item>
-		
-		<div class="subheader um-color-primary" horizontal layout center>Email</div>
-		{{#each emails}}
-			<core-item class="item">
-				<core-icon icon="mail"></core-icon>
-				<div class="text" flex><paper-input label="{{address}}"></paper-input></div>
-			</core-item>
-		{{/each}}
+		<div horizontal end-justified layout>
+			<div hidden>
+				{{> afFieldInput name='profile.admin' type='boolean-checkbox'}}
+			</div>
+			<button type="submit" id="at-btn" hidden></button>
+			<paper-button id="createUser">Create</paper-button>
+		</div>
+
+		{{/autoForm}}
 		<!-- </div> -->
 	{{/with}}
 	</div>
+  	<paper-toast global-toast></paper-toast>
 </template>
