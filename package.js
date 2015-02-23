@@ -18,12 +18,11 @@ Package.onUse(function(api) {
 
   api.use('softbricks:user-management', ['client', 'server']);
   api.imply('softbricks:user-management@0.0.1', ['client', 'server']);
-
-  api.use('conielo:autoform-polymer-paper', 'client');
-  api.imply('conielo:autoform-polymer-paper@0.1.1', 'client');
   
   api.use(['useraccounts:polymer']);
   api.imply(['useraccounts:polymer']);
+
+  api.use('conielo:autoform-polymer-paper@0.1.2', 'client');
 
 
 
