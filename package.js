@@ -21,13 +21,16 @@ Package.onUse(function(api) {
 
   api.use('conielo:autoform-polymer-paper', 'client');
   api.imply('conielo:autoform-polymer-paper@0.1.1', 'client');
+  
+  api.use(['useraccounts:polymer']);
+  api.imply(['useraccounts:polymer']);
 
 
 
   api.addFiles('lib/stylesheets/colors.css', 'client');
   api.addFiles('lib/stylesheets/general.css', 'client');
   api.addFiles('lib/coreExtension.js', ['client', 'server']);
-  api.addFiles(['lib/templates/showUsers.html', 'lib/templates/showUsers.js'], 'client');
+  api.addFiles(['lib/templates/showUsers.html', 'lib/templates/showUsers.js', 'lib/stylesheets/showUsers.css'], 'client');
   api.addFiles(['lib/templates/showUser.html', 'lib/templates/showUser.js', 'lib/stylesheets/showUser.css'],  'client');
   api.addFiles(['lib/templates/editUser.html', 'lib/templates/editUser.js', 'lib/stylesheets/editUser.css'], 'client');
   api.addFiles(['lib/templates/addUser.html', 'lib/templates/addUser.js'], 'client');

@@ -34,6 +34,17 @@
 			<div class="secondary-text"></div>
 		</core-item>
 
+		<div class="subheader um-color-primary" horizontal layout center>Admin</div>
+		<core-item class="item">
+			{{#if profile.admin}}
+			<core-icon class="left-icon" icon="check"></core-icon>
+			{{else}}
+			<core-icon class="left-icon" icon="clear"></core-icon>
+			{{/if}}
+			<div class="text">Admin</div>
+			<div class="secondary-text"></div>
+		</core-item>
+
 		{{#each profile.fields}}
 		<div class="subheader um-color-primary" horizontal layout center>{{key}}</div>
 		<core-item class="item">

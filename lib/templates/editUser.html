@@ -1,8 +1,7 @@
 <template name="umEditUser">
 	<div class="um edit-user-view">
 	{{#with user}}
-	<!-- TODO change createUserForm to editUserForm -->
-        {{#autoForm schema=userschema doc=this id="createUserForm" type="method" meteormethod="updateUserInformation" validation="keyup"}}
+        {{#autoForm schema=userschema doc=this id="editUserForm" type="method" meteormethod="updateUserInformation" validation="keyup"}}
 
 
 		{{> afQuickField name="profile.fullname" autocomplete="off" icon="social:person"}}
@@ -10,25 +9,25 @@
         {{> afQuickField name="username" autocomplete="off" icon="account-circle"}}
         
         {{> afQuickField name="profile.activated"}}
-        {{> afQuickField name="profile.fields"}}
 
 		<core-item class="item toggle-item">
-			<paper-toggle-button id="adminToggle"></paper-toggle-button>
+			<paper-toggle-button id="adminToggle" checked="{{profile.admin}}"></paper-toggle-button>
 			<div class="text" flex>
 				Admin
 			</div>
 		</core-item>
+
+        {{> afQuickField name="profile.fields"}}
 		
 		<div horizontal end-justified layout>
 			<div hidden>
 				{{> afFieldInput name='profile.admin' type='boolean-checkbox'}}
 			</div>
 	        <button type="submit" id="at-btn" hidden></button>
-	        <paper-button id="editUser">SAVE</paper-button>
+	        <paper-button id="saveUser">SAVE</paper-button>
 		</div>
 
 		{{/autoForm}}
-		<!-- </div> -->
 	{{/with}}
 	</div>
   	<paper-toast global-toast></paper-toast>

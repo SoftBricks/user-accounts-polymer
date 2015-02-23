@@ -1,0 +1,25 @@
+.user-list .item {
+	cursor: pointer;
+	height: 72px;
+	border-bottom: 1px solid #f0f0f0;
+}
+.user-list .avatar {
+	margin-left: 16px;
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	background: #EFEFEF;
+}
+.user-list .content {
+	padding-left: 16px;
+	padding-right: 16px;
+}
+.user-list .text {
+	font-size: 16px;
+}
+.user-list .secondary-text {
+	font-size: 14px;
+}
+.user-list .emails {
+	color: #A3A3A3;
+}
