@@ -1,0 +1,22 @@
+<template name="umShowGroup">
+	<div class="um group-detail-view">
+	{{#with group}}
+		
+		{{>groupItem label="groupname" icon="social:group" value=group.groupname}}
+		
+		{{>groupItem label="leader" icon="social:person" value=group.leader}}
+
+		{{>groupItem label="parentGroup" icon="social:people-outline" value=group.parentGroup}}
+
+	{{/with}}
+	</div>
+</template>
+
+<template name="groupItem">
+	<div class="subheader um-color-primary" horizontal layout center>{{_ label}}</div>
+	<core-item class="item">
+		<core-icon class="left-icon" icon="{{icon}}"></core-icon>
+		<div class="text">{{value}}</div>
+		<div class="secondary-text"></div>
+	</core-item>
+</template>
