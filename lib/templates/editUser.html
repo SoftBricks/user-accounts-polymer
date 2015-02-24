@@ -17,18 +17,18 @@
 			</div>
 		</core-item>
 
-        {{> afQuickField name="profile.fields"}}
+        {{> afQuickField name="profile.fields" addFieldLabel=addField}}
 		
 		<div horizontal end-justified layout>
 			<div hidden>
 				{{> afFieldInput name='profile.admin' type='boolean-checkbox'}}
 			</div>
 	        <button type="submit" id="at-btn" hidden></button>
-	        <paper-button id="saveUser">SAVE</paper-button>
+	        <paper-button id="saveUser">{{save}}</paper-button>
 		</div>
 
 		{{/autoForm}}
 	{{/with}}
 	</div>
-  	<paper-toast global-toast></paper-toast>
+  	<!-- <paper-toast global-toast></paper-toast> -->
 </template>

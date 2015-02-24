@@ -1,0 +1,16 @@
+.um.create-group-view .list-wrapper {
+	border: 1px solid #efefef;
+}
+.um.create-group-view .list-wrapper.hidden {
+	display: none;
+}
+.um.create-group-view .list-wrapper.hidden user-list {
+	height: 0;
+}
+.um.create-group-view user-list, .um.create-group-view groups-list {
+	height: 200px;
+	overflow: auto;
+}
+.um.create-group-view user-list::shadow core-list, .um.create-group-view groups-list::shadow core-list {
+	height: 200px;
+}
