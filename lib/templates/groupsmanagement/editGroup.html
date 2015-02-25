@@ -1,10 +1,11 @@
-<template name="umAddGroup">
+<template name="umEditGroup">
 	<div class="um create-group-view">
 		
 		<div horizontal center-justified layout>
 			<div class="um-content" flex>
 				{{#if groupschema}}
-				{{#autoForm schema=groupschema id="addGroupForm" type="method" meteormethod="createGroup" validation="keyup"}}
+    			{{#with group}}
+				{{#autoForm schema=groupschema doc=this id="editGroupForm" type="method" meteormethod="updateGroup" validation="keyup"}}
 
 					{{> afQuickField name="groupname" autocomplete="off" icon="social:group"}}
 					{{> afQuickField name="leader" id="leader" autocomplete="off" icon="social:person"}}
@@ -28,9 +29,10 @@
 				    </div>
 					<div horizontal end-justified layout>
 						<button type="submit" id="at-btn" hidden></button>
-						<paper-button id="createGroup">{{_ "create"}}</paper-button>
+						<paper-button id="saveGroup">{{_ "save"}}</paper-button>
 					</div>
 				{{/autoForm}}
+				{{/with}}
 				{{else}}
 				Please add the package softbricks:user-management-groups to use this template
 				{{/if}}

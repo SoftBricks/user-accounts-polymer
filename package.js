@@ -38,6 +38,7 @@ Package.onUse(function(api) {
   api.addFiles(['lib/templates/groupsmanagement/showGroups.html', 'lib/templates/groupsmanagement/showGroups.js'], ['client']);
   api.addFiles(['lib/templates/groupsmanagement/showGroup.html', 'lib/templates/groupsmanagement/showGroup.js'], ['client']);
   api.addFiles(['lib/templates/groupsmanagement/addGroup.html', 'lib/templates/groupsmanagement/addGroup.js', 'lib/stylesheets/addGroup.css'], ['client']);
+  api.addFiles(['lib/templates/groupsmanagement/editGroup.html', 'lib/templates/groupsmanagement/editGroup.js'], ['client']);
 
   api.export('UserManagementPolymer', ['client', 'server']);
 });
