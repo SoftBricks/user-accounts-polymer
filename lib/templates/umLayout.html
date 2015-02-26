@@ -1,0 +1,14 @@
+<template name="umLayout">
+
+  	{{> UI.contentBlock}}
+	
+	<paper-action-dialog um-dialog layered backdrop
+    transition="paper-dialog-transition-bottom"
+    class={{#if umDialogFullOnMobile}}full-on-mobile{{/if}}>
+    hallo
+    {{#if umDialogTemplate}}
+      {{> UI.dynamic template=umDialogTemplate data=umDialogData}}
+    {{/if}}
+  </paper-action-dialog>
+	
+</template>

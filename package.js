@@ -25,6 +25,8 @@ Package.onUse(function(api) {
   api.use('conielo:autoform-polymer-paper@0.1.2', 'client');
 
 
+  api.addFiles('lib/templates/umLayout.html', 'client');
+  api.addFiles('lib/umUi.js', 'client');
 
   api.addFiles('lib/stylesheets/colors.css', 'client');
   api.addFiles('lib/stylesheets/general.css', 'client');
@@ -39,6 +41,7 @@ Package.onUse(function(api) {
   api.addFiles(['lib/templates/groupsmanagement/showGroup.html', 'lib/templates/groupsmanagement/showGroup.js'], ['client']);
   api.addFiles(['lib/templates/groupsmanagement/addGroup.html', 'lib/templates/groupsmanagement/addGroup.js', 'lib/stylesheets/addGroup.css'], ['client']);
   api.addFiles(['lib/templates/groupsmanagement/editGroup.html', 'lib/templates/groupsmanagement/editGroup.js'], ['client']);
+  api.addFiles(['lib/templates/groupsmanagement/groupMembers.html', 'lib/templates/groupsmanagement/groupMembers.js'], ['client']);
 
   api.export('UserManagementPolymer', ['client', 'server']);
 });

@@ -10,8 +10,8 @@
 					{{> afQuickField name="groupname" autocomplete="off" icon="social:group"}}
 					{{> afQuickField name="leader" id="leader" autocomplete="off" icon="social:person"}}
 
-				    <div class="list-wrapper user-list-wrapper">
-						<user-list></user-list>
+				    <div class="list-wrapper leader-list-wrapper">
+						<user-list class="leader-list"></user-list>
 				    </div>
 
 					{{#if agency}}
@@ -22,11 +22,12 @@
 					{{> afQuickField name="projects"}}
 					{{/if}}
 
-					{{> afQuickField name="parentGroup" id="parentGroupName" icon="social:people-outline"}}
+					{{> afQuickField value=parentGroupName name="parentGroup" id="parentGroupName" icon="social:people-outline"}}
 
 					<div class="list-wrapper groups-list-wrapper">
 						<groups-list></groups-list>
 				    </div>
+
 					<div horizontal end-justified layout>
 						<button type="submit" id="at-btn" hidden></button>
 						<paper-button id="saveGroup">{{_ "save"}}</paper-button>

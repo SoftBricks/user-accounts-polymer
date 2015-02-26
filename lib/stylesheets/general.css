@@ -31,3 +31,9 @@
 .um .um-content {
 	max-width: 500px;
 }
+
+.um .absolute-fab {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+}

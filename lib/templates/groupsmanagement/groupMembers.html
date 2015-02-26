@@ -1,0 +1,25 @@
+<template name="groupMembers">
+	<div class="subheader um-color-primary" horizontal layout center>{{_ "members"}}</div>
+    <div class="list-wrapper member-list-wrapper">
+    <!-- {{#with users}} -->
+        {{>userList users=users}}
+    <!-- {{/with}} -->
+    </div>
+</template>
+
+<template name="addGroupMemberDialog">
+    <!-- <paper-dialog id="shareDialog" transition="core-transition-center" heading="Teilen Sie das Bild"> -->
+    <p>Wählen Sie eine Person die sie zur Gruppe hinzufügen möchten.</p>
+
+    <div vertical layout>
+
+        <paper-input label="Email Adresse" id="userSearchField"></paper-input>
+        <check-list id="memberCheckList"></check-list>
+    </div>
+    <paper-button affirmative="" role="button" tabindex="0">Fertig</paper-button>
+<!-- </paper-dialog> -->
+</template>
+
+<template name="userList">
+    <user-list class="member-list"></user-list>
+</template>

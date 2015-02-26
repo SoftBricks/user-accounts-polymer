@@ -1,15 +1,21 @@
 <template name="umShowGroup">
-	<div class="um group-detail-view">
-	{{#with group}}
-		
-		{{>groupItem label="groupname" icon="social:group" value=group.groupname}}
-		
-		{{>groupItem label="leader" icon="social:person" value=group.leader}}
+	{{#umLayout}}
+		<div class="um group-detail-view">
+		{{#with group}}
+			
+			{{>groupItem label="groupname" icon="social:group" value=group.groupname}}
+			
+			{{>groupItem label="leader" icon="social:person" value=group.leader}}
 
-		{{>groupItem label="parentGroup" icon="social:people-outline" value=group.parentGroup}}
+			{{>groupItem label="parentGroup" icon="social:people-outline" value=parentGroupName}}
 
-	{{/with}}
-	</div>
+			{{> groupMembers}}
+
+			<paper-fab icon="add" data-open-um-dialog data-template="addGroupMemberDialog" data-heading="{{_ 'addUserToGroup'}}" class="absolute-fab um-background-color-primary"></paper-fab>
+
+		{{/with}}
+		</div>
+	{{/umLayout}}
 </template>
 
 <template name="groupItem">
