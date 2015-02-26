@@ -1,6 +1,4 @@
-<template name="umLayout">
-
-  	{{> UI.contentBlock}}
+<template name="umPolymerLayout">
 	
 	<paper-action-dialog um-dialog layered backdrop
     transition="paper-dialog-transition-bottom"
@@ -10,5 +8,10 @@
       {{> UI.dynamic template=umDialogTemplate data=umDialogData}}
     {{/if}}
   </paper-action-dialog>
+
+  <paper-toast um-toast></paper-toast>
+
+  {{> umGlobalFab}}
+      
 	
 </template>

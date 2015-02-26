@@ -26,15 +26,17 @@ Package.onUse(function(api) {
 
 
   api.addFiles('lib/templates/umLayout.html', 'client');
+  api.addFiles('lib/templates/umGlobalFab.html', 'client');
+  api.addFiles('lib/templates/umGlobalFab.js', 'client');
   api.addFiles('lib/umUi.js', 'client');
 
   api.addFiles('lib/stylesheets/colors.css', 'client');
   api.addFiles('lib/stylesheets/general.css', 'client');
   api.addFiles('lib/coreExtension.js', ['client', 'server']);
-  api.addFiles(['lib/templates/showUsers.html', 'lib/templates/showUsers.js', 'lib/stylesheets/showUsers.css'], 'client');
-  api.addFiles(['lib/templates/showUser.html', 'lib/templates/showUser.js', 'lib/stylesheets/showUser.css'],  'client');
-  api.addFiles(['lib/templates/editUser.html', 'lib/templates/editUser.js', 'lib/stylesheets/editUser.css'], 'client');
-  api.addFiles(['lib/templates/addUser.html', 'lib/templates/addUser.js'], 'client');
+  api.addFiles(['lib/templates/usermanagement/showUsers.html', 'lib/templates/usermanagement/showUsers.js', 'lib/stylesheets/showUsers.css'], 'client');
+  api.addFiles(['lib/templates/usermanagement/showUser.html', 'lib/templates/usermanagement/showUser.js', 'lib/stylesheets/showUser.css'],  'client');
+  api.addFiles(['lib/templates/usermanagement/editUser.html', 'lib/templates/usermanagement/editUser.js', 'lib/stylesheets/editUser.css'], 'client');
+  api.addFiles(['lib/templates/usermanagement/addUser.html', 'lib/templates/usermanagement/addUser.js'], 'client');
 
   // groups
   api.addFiles(['lib/templates/groupsmanagement/showGroups.html', 'lib/templates/groupsmanagement/showGroups.js'], ['client']);

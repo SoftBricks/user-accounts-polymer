@@ -1,5 +1,5 @@
 <template name="umShowGroup">
-	{{#umLayout}}
+	<!-- {{#umLayout}} -->
 		<div class="um group-detail-view">
 		{{#with group}}
 			
@@ -11,11 +11,9 @@
 
 			{{> groupMembers}}
 
-			<paper-fab icon="add" data-open-um-dialog data-template="addGroupMemberDialog" data-heading="{{_ 'addUserToGroup'}}" class="absolute-fab um-background-color-primary"></paper-fab>
-
 		{{/with}}
 		</div>
-	{{/umLayout}}
+	<!-- {{/umLayout}} -->
 </template>
 
 <template name="groupItem">
