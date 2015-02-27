@@ -8,7 +8,7 @@
 				{{#autoForm schema=groupschema doc=this id="editGroupForm" type="method" meteormethod="updateGroup" validation="keyup"}}
 
 					{{> afQuickField name="groupname" autocomplete="off" icon="social:group"}}
-					{{> afQuickField name="leader" id="leader" autocomplete="off" icon="social:person"}}
+					{{> afQuickField name="leader" id="leader" autocomplete="off" value=leaderEmail icon="social:person"}}
 
 				    <div class="list-wrapper leader-list-wrapper">
 						<user-list class="leader-list"></user-list>

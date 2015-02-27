@@ -14,7 +14,7 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0.3.1');
 
   api.use(['templating'], 'client');
-  api.use(['underscore'], ['client', 'server']);
+  api.use(['underscore', 'reactive-var'], ['client', 'server']);
 
   api.use('softbricks:user-management', ['client', 'server']);
   api.imply('softbricks:user-management@0.0.1', ['client', 'server']);
