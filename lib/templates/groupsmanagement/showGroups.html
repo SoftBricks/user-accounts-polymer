@@ -1,9 +1,8 @@
 <template name="umShowGroups">
 {{#unless groups}}
 	<div class="um">
-		<div class="item">
-			<div class="text">no groups yet</div>
-		</div>
+		<div class="info-text">{{_ 'noGroupsYet'}}</div>
+		<div class="info-text info-text-secondary">{{_ 'maybeNoRights'}}</div>
 	</div>
 {{else}}
 	<groups-list hPanel="{{headerId}}"></groups-list>

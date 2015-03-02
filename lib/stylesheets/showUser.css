@@ -1,3 +1,10 @@
 .user-detail-view .item {
 	height: 56px;
 }
+.um .avatar {
+	margin-left: 16px;
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	background: #AFAFAF;
+}

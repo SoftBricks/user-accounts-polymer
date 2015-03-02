@@ -37,3 +37,10 @@
 	bottom: 16px;
 	right: 16px;
 }
+
+.um .info-text {
+	padding: 20px;
+}
+.um .info-text-secondary {
+	font-size: 14px;
+}

@@ -1,17 +1,24 @@
 <template name="umShowUser">
 	<div class="um user-detail-view">
 	{{#with user}}
+
 		<div class="subheader um-color-primary" horizontal layout center>{{_ 'fullname'}}</div>
 		<core-item class="item">
 			<core-icon class="left-icon" icon="social:person"></core-icon>
 			<div class="text">{{profile.fullname}}</div>
 			<div class="secondary-text"></div>
 		</core-item>
+
 		<div class="subheader um-color-primary" horizontal layout center>{{_ 'username'}}</div>
 		<core-item class="item">
 			<core-icon class="left-icon" icon="account-circle"></core-icon>
 			<div class="text">{{username}}</div>
 			<div class="secondary-text"></div>
+		</core-item>
+
+		<div class="subheader um-color-primary" horizontal layout center>Gravatar</div>
+		<core-item class="item">
+			<core-image class="avatar" src="{{gravatar}}" sizing="cover" preload></core-image>
 		</core-item>
 		
 		<div class="subheader um-color-primary" horizontal layout center>{{_ 'emailAddress'}}</div>

@@ -1,5 +1,13 @@
 <template name="umShowUsers">
-	<user-list hPanel="{{headerId}}"></user-list>
+	{{#unless users}}
+		<div class="um">
+			<div class="info-text">{{_ 'noUsersYet'}}
+				<div class="info-text-secondary">{{_ 'maybeNoUserRights'}}</div>
+			</div>
+		</div>
+	{{else}}
+		<user-list hPanel="{{headerId}}"></user-list>
+	{{/unless}}
 </template>
 
 <template name="userListItem">
