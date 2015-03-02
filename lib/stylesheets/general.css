@@ -36,6 +36,7 @@
 	position: fixed;
 	bottom: 16px;
 	right: 16px;
+	z-index: 99;
 }
 
 .um .info-text {
