@@ -11,18 +11,7 @@
 					
 					{{> afQuickField name='emails.0.address' icon='mail'}}
 
-
-					<core-item class="item toggle-item">
-						<paper-toggle-button id="adminToggle"></paper-toggle-button>
-						<div class="text" flex>
-							Admin
-						</div>
-					</core-item>
-
 					<div horizontal end-justified layout>
-						<div hidden>
-							{{> afFieldInput name='profile.admin' type='boolean-checkbox'}}
-						</div>
 						<button type="submit" id="at-btn" hidden></button>
 						<paper-button id="createUser">Create</paper-button>
 					</div>

@@ -1,28 +1,31 @@
 <template name="umEditUser">
 	<div class="um edit-user-view">
 	{{#with user}}
-        {{#autoForm schema=userschema doc=this id="editUserForm" type="method" meteormethod="updateUserInformation" validation="keyup"}}
+        {{#autoForm collection=collection doc=this id="editUserForm" type="update" validation="keyup"}}
 
 
 		{{> afQuickField name="profile.fullname" autocomplete="off" icon="social:person"}}
-        {{> afQuickField name="emails.0.address" autocomplete="off" icon="mail"}}
         {{> afQuickField name="username" autocomplete="off" icon="account-circle"}}
         
         {{> afQuickField name="profile.activated"}}
 
-		<core-item class="item toggle-item">
-			<paper-toggle-button id="adminToggle" checked="{{profile.admin}}"></paper-toggle-button>
-			<div class="text" flex>
-				Admin
-			</div>
-		</core-item>
+		<!-- {{#if admin}}
+			<core-item class="item toggle-item">
+				<paper-toggle-button id="adminToggle" checked="{{admin}}"></paper-toggle-button>
+				<div class="text" flex>
+					Admin
+				</div>
+			</core-item>
+		{{/if}} -->
 
         {{> afQuickField name="profile.fields" addFieldLabel=addField}}
 		
 		<div horizontal end-justified layout>
+			<!-- {{#if admin}}
 			<div hidden>
-				{{> afFieldInput name='profile.admin' type='boolean-checkbox'}}
+				{{> afFieldInput name='admin' type='boolean-checkbox'}}
 			</div>
+			{{/if}} -->
 	        <button type="submit" id="at-btn" hidden></button>
 	        <paper-button id="saveUser">{{save}}</paper-button>
 		</div>
