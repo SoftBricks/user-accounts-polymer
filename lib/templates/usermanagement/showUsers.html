@@ -6,8 +6,22 @@
 			</div>
 		</div>
 	{{else}}
-		<user-list hPanel="{{headerId}}"></user-list>
+		<div class="um">
+			{{#if activeUmSearch}}
+			<div class="subheader">{{_ 'searchResults'}}</div>
+			{{else}}
+			<div class="subheader">{{_ 'allUsers'}}</div>
+			{{/if}}
+		</div>
+		<!-- {{#with userList}} -->
+			<!-- {{>polymerUserList users=this}} -->
+		<!-- {{/with}} -->
+	<user-list hPanel="{{headerId}}"></user-list>
 	{{/unless}}
+</template>
+
+<template name="polymerUserList">
+	<user-list hPanel="{{headerId}}"></user-list>
 </template>
 
 <template name="userListItem">

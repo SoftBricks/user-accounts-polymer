@@ -45,7 +45,7 @@ Package.onUse(function(api) {
   api.addFiles(['lib/templates/groupsmanagement/editGroup.html', 'lib/templates/groupsmanagement/editGroup.js'], ['client']);
   api.addFiles(['lib/templates/groupsmanagement/groupMembers.html', 'lib/templates/groupsmanagement/groupMembers.js'], ['client']);
 
-  api.export('UserManagementPolymer', ['client', 'server']);
+  api.export(['UserManagementPolymer', 'UmUi'], ['client', 'server']);
 });
 
 Package.onTest(function(api) {
