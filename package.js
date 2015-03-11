@@ -45,6 +45,11 @@ Package.onUse(function(api) {
   api.addFiles(['lib/templates/groupsmanagement/editGroup.html', 'lib/templates/groupsmanagement/editGroup.js'], ['client']);
   api.addFiles(['lib/templates/groupsmanagement/groupMembers.html', 'lib/templates/groupsmanagement/groupMembers.js'], ['client']);
 
+  // roles
+  api.addFiles(['lib/templates/roles/manageRoles.html', 'lib/templates/roles/manageRoles.js'], ['client']);
+  api.addFiles(['lib/templates/roles/addRole.html', 'lib/templates/roles/addRole.js'], ['client']);
+  api.addFiles(['lib/templates/roles/deleteRole.html', 'lib/templates/roles/deleteRole.js'], ['client']);
+
   api.export(['UserManagementPolymer', 'UmUi'], ['client', 'server']);
 });
 

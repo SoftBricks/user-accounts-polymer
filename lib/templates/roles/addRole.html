@@ -1,0 +1,17 @@
+<template name="umAddRole">
+	<div class="um create-user-view">
+		
+		<div horizontal center-justified layout>
+			<div class="um-content" flex>
+				{{#autoForm collection=collection id="addRole" type="insert" validation="keyup"}}
+				{{> afQuickField name="name" autocomplete="off"}}
+
+				<div horizontal end-justified layout>
+						<button type="submit" id="submitAddRoleForm" hidden></button>
+						<paper-button id="createRole">{{_ 'create'}}</paper-button>
+					</div>
+				{{/autoForm}}
+			</div>
+		</div>
+	</div>
+</template>

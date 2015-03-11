@@ -1,0 +1,17 @@
+<template name="umManageRoles">
+	{{#unless roles}}
+		<div class="um">
+			<div class="info-text">{{_ 'noRolesYet'}}
+			</div>
+		</div>
+	{{else}}
+		<div class="um">
+			{{#if activeUmSearch}}
+			<div class="subheader">{{_ 'searchResults'}}</div>
+			{{else}}
+			<div class="subheader">{{_ 'allRoles'}}</div>
+			{{/if}}
+		</div>
+	<roles-list hPanel="{{headerId}}"></roles-list>
+	{{/unless}}
+</template>
